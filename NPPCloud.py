@@ -1,4 +1,7 @@
 # Suomi National Polar-orbiting Partnership(S-NPP)
+# Save cloud data as .dat format
+# This is created by Wei Wang
+# Contact me via :wangwei20160708@gmail.com
 
 import datetime as dt                                               # Python standard library datetime  module
 import numpy as np
@@ -7,12 +10,12 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap, addcyclic, shiftgrid
 import os.path
 
-inputfn_dir = '/data01/jyin/4test/NPPCloud/NCfl'
-outputfn_dir = '/data01/jyin/4test/NPPCloud/Binaryfmt'
+inputfn_dir = 'xxxxxxxxxxxx'
+outputfn_dir = 'xxxxxxxxxxxx'
 
 #count = 0
 
-for year in range(2018, 2019):
+for year in range(20xx, 20xx):
     year_str = f"{year:04}"
     print(year_str)
     for month in range(10, 11):
@@ -40,6 +43,7 @@ for year in range(2018, 2019):
                         sst = nc_fid.variables['CloudProbability'][:][:]
                         dat = np.array([lats, lons, sst])
                         print(sst.shape)
+                        
                         f=open(full_output_path,"wb")
                         f.write(dat)
                         f.close()
