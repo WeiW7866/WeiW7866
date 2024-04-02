@@ -1,0 +1,56 @@
+#This function was developed by Ms. Wei Wang.
+#She can be reached at wangwei20160708@gmail.com if you have any question.
+#11/03/2022
+
+import os
+import pandas as pd
+
+def Readtxt_header_line2(dir_input):                                           #This is a function for reading txt file, while the second row is the header! 
+  
+   import os
+   import os.path
+   import pandas as pd
+   inputdir = dir_input
+   if os.path.exists(inputdir):
+       print('This is a good file for reading !!!')
+       data = pd.read_csv(inputdir, delim_whitespace=True, header=1)
+       print(data)
+   else:
+       print(inputdir + ': is not exiting')
+   return data
+
+def Readtxt_header_line1(dir_input):                                          #This is a function for reading txt file, while the first row is the header! 
+   import os
+   import os.path
+   import pandas as pd
+   inputdir = dir_input
+   if os.path.exists(inputdir):
+       print('This is a good file for reading !!!')
+       data = pd.read_csv(inputdir, delim_whitespace=True, header=None)
+       print(data)
+   else:
+       print(inputdir + ': is not exiting')
+   return data
+
+def Readtxt_withourheader(dir_input):
+   #This is a function for reading txt file without header!
+   import os
+   import os.path
+   import pandas as pd
+   inputdir = dir_input
+   if os.path.exists(inputdir):
+       print('This is a good file for reading !!!')
+       data = pd.read_csv(inputdir, delim_whitespace=True, header=None)
+       print(data)
+   else:
+       print(inputdir + ': is not exiting')
+   return data
+
+
+
+inputdir = 'xxxxxxxxxx.txt' 
+
+Readtxt_withourheader(inputdir)
+
+
+
