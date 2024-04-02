@@ -7,10 +7,10 @@ import os.path
 import glob
 
 
-inputfn_dir = '/data01/jyin/4test/J012018'
-outputfn_dir = '/data01/jyin/4test/J012018'
+inputfn_dir = 'xxxxxxxx'
+outputfn_dir = 'xxxxxxxxx'
 
-for year in range(2018, 2019):
+for year in range(20xx, 20xx):
     year_str = f"{year:04}"
     print(year_str)
     for month in range(10, 11):
