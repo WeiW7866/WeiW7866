@@ -1,4 +1,8 @@
-import datetime as dt
+# Download data from Joint Polar Satellite System(JPSS)
+# This is created by Wei Wang
+# Contact me via :wangwei20160708@gmail.com
+
+import datetime as dt                                                          # Python standard library datetime  module
 import numpy as np
 import h5py
 import matplotlib.pyplot as plt
