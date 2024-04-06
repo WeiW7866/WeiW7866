@@ -1,5 +1,5 @@
-# Download data from Joint Polar Satellite System(JPSS)
-# This is created by Wei Wang
+# This is an example of converting HDF5 to Binary format
+# This is created by Wei Wang on March 20th,2022.
 # Contact me via :wangwei20160708@gmail.com
 
 import datetime as dt                                                          # Python standard library datetime  module
@@ -11,10 +11,10 @@ import os.path
 import glob
 
 
-inputfn_dir = 'xxxxxxxx'
-outputfn_dir = 'xxxxxxxxx'
+inputfn_dir = 'This is a input directory.'
+outputfn_dir = 'This is a output directory.'
 
-for year in range(20xx, 20xx):
+for year in range(2012, 2020):
     year_str = f"{year:04}"
     print(year_str)
     for month in range(10, 11):
@@ -37,11 +37,11 @@ for year in range(20xx, 20xx):
                     if os.path.exists(hdf):
                         with h5py.File(hdf, 'r') as f:
                             a_group_key = list(f.keys())[0]
-                            G1 = f.get('All_Data')
-                            G2 = G1.get('VIIRS-MOD-GEO_All')
-                            lat = np.array(G2.get('Latitude'))
-                            lon = np.array(G2.get('Longitude'))
-                            G2SVM12= G1.get('VIIRS-M12-SDR_All')
+                            G1 = f.get('All_Data')                                                                             # This is the first attributes group
+                            G2 = G1.get('VIIRS-MOD-GEO_All')                                                                   # This is the second attributes group
+                            lat = np.array(G2.get('Latitude'))                                                                 # Attribute latitude
+                            lon = np.array(G2.get('Longitude'))                                                                # Attribute longitude
+                            G2SVM12= G1.get('VIIRS-M12-SDR_All')                                                               # I used G2SVM12-16, please change them for your purpose
                             TbSVM12= np.array(G2SVM12.get('BrightnessTemperature'))
                             G2SVM13= G1.get('VIIRS-M13-SDR_All')
                             TbSVM13= np.array(G2SVM13.get('BrightnessTemperature'))
